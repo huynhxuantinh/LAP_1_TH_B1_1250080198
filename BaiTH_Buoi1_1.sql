@@ -351,10 +351,6 @@ UNION ALL SELECT 's_item', COUNT(*) FROM s_item
 UNION ALL SELECT 's_inventory', COUNT(*) FROM s_inventory
 ORDER BY 1;
 
-PROMPT ===== GHI CHU SQL*PLUS (1-5) =====
--- 1) KET THUC CAU LENH BANG DAU ;
--- Tat ca cau lenh SQL ben tren deu ket thuc bang dau ;
-
 -- 2) HIEN THI USER HIEN HANH
 SHOW USER
 
@@ -369,6 +365,3 @@ PROMPT set pagesize 100
 PROMPT set linesize 200
 PROMPT spool output_th1.txt
 PROMPT spool off
-
-PROMPT ===== SAN SANG CHO BAI TAP BUOI 1 =====
-EXIT
