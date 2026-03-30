@@ -8,8 +8,6 @@ ALTER SESSION SET NLS_DATE_FORMAT = 'DD/MM/YYYY';
 CONNECT XUANTINH/XUANTINH
 SHOW USER
 
-PROMPT
-PROMPT ===== BAI 6 - C1 =====
 -- 1) Ho, ten, ngay tuyen dung cua nhan vien cung phong voi Lan
 SELECT e.last_name,
        e.first_name,
@@ -23,8 +21,6 @@ WHERE e.dept_id = (
 )
 ORDER BY e.last_name, e.first_name;
 
-PROMPT
-PROMPT ===== BAI 6 - C2 =====
 -- 2) Ma NV, ho, ten, userid cua nhan vien co luong > luong trung binh
 SELECT id,
        last_name,
@@ -34,8 +30,6 @@ FROM s_emp
 WHERE salary > (SELECT AVG(salary) FROM s_emp)
 ORDER BY id;
 
-PROMPT
-PROMPT ===== BAI 6 - C3 =====
 -- 3) Ma NV, ho, ten cua nhan vien co luong > TB va ten chua ky tu "L"
 SELECT id,
        last_name,
@@ -45,8 +39,6 @@ WHERE salary > (SELECT AVG(salary) FROM s_emp)
   AND (UPPER(first_name) LIKE '%L%' OR UPPER(last_name) LIKE '%L%')
 ORDER BY id;
 
-PROMPT
-PROMPT ===== BAI 6 - C4 =====
 -- 4) Khach hang chua bao gio dat hang
 SELECT c.id,
        c.name
