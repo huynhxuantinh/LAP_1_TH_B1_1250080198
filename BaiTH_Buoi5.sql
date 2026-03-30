@@ -6,8 +6,6 @@ SET DEFINE OFF
 CONNECT XUANTINH/XUANTINH
 SHOW USER
 
-PROMPT
-PROMPT ===== BAI 5 - C1 =====
 -- 1) Ma nguoi quan ly va so nhan vien duoc quan ly
 SELECT manager_id,
        COUNT(*) AS so_nhan_vien
@@ -16,8 +14,6 @@ WHERE manager_id IS NOT NULL
 GROUP BY manager_id
 ORDER BY manager_id;
 
-PROMPT
-PROMPT ===== BAI 5 - C2 =====
 -- 2) Nguoi quan ly tu 20 nhan vien tro len
 SELECT manager_id,
        COUNT(*) AS so_nhan_vien
@@ -27,8 +23,6 @@ GROUP BY manager_id
 HAVING COUNT(*) >= 20
 ORDER BY manager_id;
 
-PROMPT
-PROMPT ===== BAI 5 - C3 =====
 -- 3) Ma vung, ten vung, so phong ban truc thuoc moi vung
 SELECT r.id AS region_id,
        r.name AS region_name,
@@ -38,8 +32,6 @@ LEFT JOIN s_dept d ON d.region_id = r.id
 GROUP BY r.id, r.name
 ORDER BY r.id;
 
-PROMPT
-PROMPT ===== BAI 5 - C4 =====
 -- 4) Ten khach hang va so luong don dat hang cua moi khach hang
 SELECT c.name AS customer_name,
        COUNT(o.id) AS so_don_dat_hang
@@ -48,8 +40,6 @@ LEFT JOIN s_ord o ON o.customer_id = c.id
 GROUP BY c.id, c.name
 ORDER BY c.id;
 
-PROMPT
-PROMPT ===== BAI 5 - C5 =====
 -- 5) Khach hang co so don dat hang nhieu nhat
 WITH t AS (
     SELECT c.id,
@@ -66,8 +56,6 @@ FROM t
 WHERE so_don_dat_hang = (SELECT MAX(so_don_dat_hang) FROM t)
 ORDER BY id;
 
-PROMPT
-PROMPT ===== BAI 5 - C6 =====
 -- 6) Khach hang co tong tien mua hang lon nhat
 WITH t AS (
     SELECT c.id,
