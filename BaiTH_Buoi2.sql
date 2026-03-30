@@ -5,17 +5,12 @@ SET DEFINE OFF
 
 ALTER SESSION SET NLS_DATE_FORMAT = 'DD/MM/YYYY';
 
-PROMPT ===== CHUAN BI =====
-PROMPT Chay script buoi 1 (neu can reset du lieu): @BaiTH_Buoi1.sql;
-PROMPT Sau do chay script nay: @BaiTH_Buoi2.sql;
-
 CONNECT XUANTINH/XUANTINH
 SHOW USER
 
 PROMPT
 PROMPT ===== C1 =====
 -- 1) Ten, ma khach hang. Dat ten cot: Ten khach hang, Ma khach hang.
--- Sap xep giam dan theo ma khach hang.
 SELECT name AS "Ten khach hang",
        id   AS "Ma khach hang"
 FROM s_customer
@@ -24,7 +19,6 @@ ORDER BY id DESC;
 PROMPT
 PROMPT ===== C2 =====
 -- 2) Hien thi ho ten (noi bang ||) va ma phong cua nhan vien phong 10, 50.
--- Dat alias cot ho ten la Employees. Sap xep theo ten.
 SELECT first_name || ' ' || last_name AS Employees,
        dept_id
 FROM s_emp
