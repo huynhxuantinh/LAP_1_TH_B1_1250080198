@@ -8,8 +8,6 @@ ALTER SESSION SET NLS_DATE_FORMAT = 'DD-MON-YYYY';
 CONNECT XUANTINH/XUANTINH
 SHOW USER
 
-PROMPT
-PROMPT ===== BAI 3 - C1 =====
 -- 1) Ma nhan vien, ten va muc luong tang them 15%
 SELECT id AS emp_id,
        first_name || ' ' || last_name AS emp_name,
@@ -18,8 +16,6 @@ SELECT id AS emp_id,
 FROM s_emp
 ORDER BY id;
 
-PROMPT
-PROMPT ===== BAI 3 - C2 =====
 -- 2) Ten, ngay tuyen dung, ngay xem xet tang luong:
 -- Ngay thu hai sau 6 thang lam viec.
 -- Dinh dang: "Eighth of May 1992"
@@ -31,8 +27,6 @@ SELECT first_name || ' ' || last_name AS emp_name,
 FROM s_emp
 ORDER BY id;
 
-PROMPT
-PROMPT ===== BAI 3 - C3 =====
 -- 3) Ten san pham co chu "ski"
 SELECT id,
        name
@@ -40,8 +34,6 @@ FROM s_product
 WHERE LOWER(name) LIKE '%ski%'
 ORDER BY name;
 
-PROMPT
-PROMPT ===== BAI 3 - C4 =====
 -- 4) So thang tham nien (lam tron), sap xep tang dan
 SELECT id AS emp_id,
        first_name || ' ' || last_name AS emp_name,
